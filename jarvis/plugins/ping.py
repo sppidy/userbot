@@ -6,7 +6,7 @@ from jarvis.utils import admin_cmd, sudo_cmd
 import time
 
 @jarvis.on(admin_cmd(pattern="pong ?(.*)"))
-@jarvis.on(sudo_cmd(outgoing=True, pattern="pong ?(.*)", allow_sudo=True))
+@jarvis.on(sudo_cmd(outgoing=True, pattern="pong ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -48,7 +48,7 @@ def get_readable_time(seconds: int) -> str:
 
 #@command(pattern="^.ping$")
 @jarvis.on(admin_cmd(pattern="ping"))
-@jarvis.on(sudo_cmd(outgoing=True, pattern="ping", allow_sudo=True))
+@jarvis.on(sudo_cmd(outgoing=True, pattern="ping"))
 async def _(event):
     if event.fwd_from:
         return
